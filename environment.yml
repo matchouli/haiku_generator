@@ -1,0 +1,7 @@
+nltk
+torch
+hydra-core
+omegaconf
+xkcdpass
+spacy
+sentencepiece

@@ -34,12 +34,11 @@ class GherasimGenerator():
         self.voyelles = ["a", "e", "i", "o", "u", "y"]
 
 
-    def generate_gherasim_haiku(self, password):
+    def generate_gherasim_haiku(self, words):
         poem = []
-        words = password.split('_')
         for word in words:
+            word = '-' + word + '-'
             if word.endswith('ant'):
-                word[0] = word[0].upper()
                 temp = word
             elif word.endswith('ent'):
                 temp = "Ils " + word

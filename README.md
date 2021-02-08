@@ -1,25 +1,29 @@
 # haiku_generator
 
+Génération de Haiku.
 
-# Sources
+## Exemple d'utilisation
 
-* https://stackoverflow.com/questions/1150144/generating-random-sentences-from-custom-text-in-pythons-nltk
-* https://www.agiliq.com/blog/2009/06/generating-pseudo-random-text-with-markov-chains-u/
-* textes :
-  * https://www.gutenberg.org/ebooks/author/1947
-  * https://www.gutenberg.org/ebooks/20761
-  * https://www.gutenberg.org/ebooks/14082
-* A regarder : 
-  * https://stackabuse.com/text-generation-with-python-and-tensorflow-keras/
-  * https://www.xspdf.com/resolution/51005260.html
-  * https://www.analyticsvidhya.com/blog/2018/03/text-generation-using-python-nlp/
-* Autres projets :
-  * https://github.com/yoogchu/tweetyhaiku/blob/master/brownBigramDict.txt
-  * https://github.com/bfaure/hAIku
-  * https://github.com/nlsandler/haiku-generator/blob/master/haiku.py
-  * https://github.com/bwbaugh/haikupy
-  * https://github.com/SomeKittens/Haiku-Generator/blob/master/MakeHaiku.py
-  * https://github.com/rlfriedman/HaikuGenerator
-  * https://github.com/ltruchot/haiku-generator
-  * La recherche : https://github.com/search?l=Python&q=haiku+generator&type=Repositories
-* Les mots de passe sont issus de : https://github.com/redacted/XKCD-password-generator
+Exemple d'utilisation :
+
+```
+import xkcdpass.xkcd_password as xp
+from haiku_generator.gherasim import GherasimGenerator
+
+# get a XKCD password
+mywords = xp.generate_wordlist(min_length=3, max_length=8, wordfile='fr-freelang', valid_chars='[a-z]')
+raw_password = xp.generate_xkcdpassword(mywords, numwords=4).split(' ')
+print(raw_password)
+
+gherasim_generator = GherasimGenerator()
+
+print(gherasim_generator.generate_gherasim_haiku(raw_password))
+print()
+
+```
+
+## Inspiration
+
+Inspiré librement d'un texte de Gherasim Luca, disponible à cette adresse : http://www.poesie-fertile.fr/?p=3462.
+
+

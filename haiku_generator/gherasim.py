@@ -44,6 +44,8 @@ class GherasimGenerator():
                 temp = "Ils " + word
             elif word.endswith('ez'):
                 temp = "Vous " + word
+            elif word.endswith('er'):
+                temp = "Pour " + word
             elif word[0] not in self.voyelles:
                 choice = random.choice(self.debuts)
                 temp = choice + word
